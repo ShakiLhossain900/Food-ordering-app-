@@ -1,8 +1,10 @@
+import { Fragment } from "react";
+import Header from "./components/Layout/Header";
 function App() {
   return (
-    <div >
-    <h1>this is shakil hossain</h1>
-    </div>
+    <Fragment>
+      <Header />
+    </Fragment>
   );
 }
 
