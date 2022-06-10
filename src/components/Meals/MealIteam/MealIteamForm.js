@@ -1,6 +1,7 @@
+import classes from './MealItemForm.module.css'
 const MealIteamForm = (props) => {
     return (
-      <form  >
+      <form className={classes.form}  >
           <input />
           <button>+ add</button>
       </form>    
