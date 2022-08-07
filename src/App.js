@@ -1,6 +1,7 @@
  //when the time for code i have to do manually insert the data in the firebase and start work
  //than need to do recheck module 17 introduction agian and start code with this
  //exam is going on thats why the code is not running on
+ //after finish the exam in 14 i will be do unlimitated code inshaallah
  import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
