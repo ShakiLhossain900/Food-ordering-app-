@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import MealIteam from "./MealIteam/MealIteam";
 import classes from "./AvailableMeals.module.css";
 const DUMMY_MEALS = [
+  //manual 4 data alrady created in firebase
   {
     id: "m1",
     name: "Sushi",
