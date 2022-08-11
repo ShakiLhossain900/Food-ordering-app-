@@ -14,8 +14,6 @@ const ModalOverlay = (props) => {
     </div>
   );
 };
-// i will change everything inshaallah as soon as possible
-// trying to practice for the exam and there is no option
 //html er root jekahne amara doreci and output dekahar jonnu root id theke dekte 
 //parteci akhn amara overlays same akta kaj kore also amara backdrop and modaloverlay use korbu
 
