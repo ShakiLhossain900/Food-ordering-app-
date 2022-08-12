@@ -1,8 +1,7 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Card from "../UI/Card";
 import MealIteam from "./MealIteam/MealIteam";
 import classes from "./AvailableMeals.module.css";
-
 
 //comment out the dummey meal data now time to use Http data
 // const DUMMY_MEALS = [
@@ -33,17 +32,18 @@ import classes from "./AvailableMeals.module.css";
 //   },
 // ];
 
-
-
 const AvailableMeals = () => {
+  //fetch the http
+  useEffect(() => {
+    const fetchMeals = async () => {
+      const response = await fetch(
+        "https://food-19730-default-rtdb.firebaseio.com/meals.json"
+      );
+      const responseData = await response.json();
 
-//fetch the http 
-useEffect(()=>{
-  fetch('https://food-19730-default-rtdb.firebaseio.com/meals.json');
-  
-
-},[])
-
+      
+    };
+  }, []);
 
   const mealsList = DUMMY_MEALS.map((meal) => (
     <MealIteam
