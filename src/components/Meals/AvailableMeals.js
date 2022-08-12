@@ -37,11 +37,10 @@ import classes from "./AvailableMeals.module.css";
 
 const AvailableMeals = () => {
 
-
-
 //fetch the http 
 useEffect(()=>{
-  fetch()
+  fetch('https://food-19730-default-rtdb.firebaseio.com/meals.json');
+  
 },[])
 
 
