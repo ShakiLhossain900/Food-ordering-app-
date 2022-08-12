@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Card from "../UI/Card";
 import MealIteam from "./MealIteam/MealIteam";
 import classes from "./AvailableMeals.module.css";
@@ -33,7 +33,18 @@ import classes from "./AvailableMeals.module.css";
 //   },
 // ];
 
+
+
 const AvailableMeals = () => {
+
+
+
+//fetch the http 
+useEffect(()=>{
+  fetch()
+},[])
+
+
   const mealsList = DUMMY_MEALS.map((meal) => (
     <MealIteam
       key={meal.id}
