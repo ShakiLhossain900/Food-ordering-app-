@@ -37,11 +37,19 @@ const AvailableMeals = () => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://food-19730-default-rtdb.firebaseio.com/meals.json"
-      );
+        "https://food-19730-default-rtdb.firebaseio.com/meals.json");
       const responseData = await response.json();
 
-      
+      const loadedMeals= [];
+      for (const key in responseData) {
+        loadedMeals.push({
+          id:key,
+          name:responseData[key].name, //always return object
+        })
+      }
+
+        
+
     };
   }, []);
 
