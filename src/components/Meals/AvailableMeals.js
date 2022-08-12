@@ -33,7 +33,7 @@ import classes from "./AvailableMeals.module.css";
 // ];
 
 const AvailableMeals = () => {
-  const [meals, setMeals] = useState([])
+  const [meals, setMeals] = useState([]);
   //fetch the http
   useEffect(() => {
     const fetchMeals = async () => {
