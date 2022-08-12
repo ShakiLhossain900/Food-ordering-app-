@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import Card from "../UI/Card";
 import MealIteam from "./MealIteam/MealIteam";
 import classes from "./AvailableMeals.module.css";
@@ -33,6 +33,7 @@ import classes from "./AvailableMeals.module.css";
 // ];
 
 const AvailableMeals = () => {
+  const [meals, setMeals] = useState([])
   //fetch the http
   useEffect(() => {
     const fetchMeals = async () => {
@@ -44,16 +45,18 @@ const AvailableMeals = () => {
       for (const key in responseData) {
         loadedMeals.push({
           id:key,
-          name:responseData[key].name, //always return object
-        })
+          name:responseData[key].name, //always return object tai amara array create kore arekt array push korteci
+          description:responseData[key].description,
+          price:responseData[key].price
+        });
       }
-
-        
+      setMeals(loadedMeals);
 
     };
+    fetchMeals();
   }, []);
 
-  const mealsList = DUMMY_MEALS.map((meal) => (
+  const mealsList = meals.map((meal) => (
     <MealIteam
       key={meal.id}
       id={meal.id}
