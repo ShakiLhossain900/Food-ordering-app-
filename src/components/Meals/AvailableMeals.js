@@ -41,6 +41,7 @@ const AvailableMeals = () => {
 useEffect(()=>{
   fetch('https://food-19730-default-rtdb.firebaseio.com/meals.json');
   
+
 },[])
 
 
