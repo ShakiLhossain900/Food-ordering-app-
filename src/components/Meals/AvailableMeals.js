@@ -33,6 +33,8 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = () => {
+
+  // i need to work for this the fetch why not working  
 //   const [meals, setMeals] = useState([]);
 
 //   useEffect(() => {
