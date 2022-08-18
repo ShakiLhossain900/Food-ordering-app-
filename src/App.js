@@ -1,10 +1,5 @@
 //the code day start with allah 
-//when the time for code i have to do manually insert the data in the firebase and start work
- //than need to do recheck module 17 introduction agian and start code with this
- //working on backend database firebase 
- //try to change the available meal to manul meal in firebase
 
- 
  import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
