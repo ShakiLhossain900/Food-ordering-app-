@@ -36,10 +36,12 @@ const AvailableMeals = () => {
 
  // i need to work for this the fetch why not working  
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMeals = async () => {
-      const response = await fetch('https://food-19730-default-rtdb.firebaseio.com//meals.json');
+      
+      const response = await fetch('https://food-app-75f79-default-rtdb.firebaseio.com/meals.json');
       const responseData = await response.json();
 
       const loadedMeals = [];
@@ -54,10 +56,19 @@ const AvailableMeals = () => {
       }
 
       setMeals(loadedMeals);
+      setIsLoading(false)
     };
-
+    
     fetchMeals();
   }, []);
+  
+if(isLoading){
+  return(
+    <section className={classes.MealsLoading}>
+      <p>Loading...</p>
+    </section>
+  )
+}
 
   const mealsList = meals.map((meal) => (
     <MealIteam
@@ -78,3 +89,4 @@ const AvailableMeals = () => {
 };
 
 export default AvailableMeals;
+
