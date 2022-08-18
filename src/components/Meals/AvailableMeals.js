@@ -37,11 +37,17 @@ const AvailableMeals = () => {
  // i need to work for this the fetch why not working  
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState(null);
 
   useEffect(() => {
     const fetchMeals = async () => {
       
       const response = await fetch('https://food-app-75f79-default-rtdb.firebaseio.com/meals.json');
+       
+      if(!response.ok) {
+        throw new Error ('Something went wrong');   ///jenuric error
+      }
+
       const responseData = await response.json();
 
       const loadedMeals = [];
@@ -58,8 +64,22 @@ const AvailableMeals = () => {
       setMeals(loadedMeals);
       setIsLoading(false)
     };
-    
-    fetchMeals();
+    //async await promise try avabe kaj korbe na so onnu akta tradditional system ache atar jonnu 
+    // try{
+    //   fetchMeals();
+
+    // }
+    // catch(e){
+    //   setIsLoading(false);
+    //   setHttpError(e.message);
+    // }
+
+    //like
+     fetchMeals().catch((e) => {
+      setIsLoading(false);
+      setHttpError(e.message);
+     })
+
   }, []);
   
 if(isLoading){
@@ -70,6 +90,13 @@ if(isLoading){
   )
 }
 
+if(httpError){
+  return (
+    <section className={classes.MealsError}>
+      <p>{httpError}</p>
+    </section>
+  )
+}
   const mealsList = meals.map((meal) => (
     <MealIteam
       key={meal.id}
