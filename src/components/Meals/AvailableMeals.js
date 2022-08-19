@@ -64,6 +64,8 @@ const AvailableMeals = () => {
       setMeals(loadedMeals);
       setIsLoading(false)
     };
+
+
     //async await promise try avabe kaj korbe na so onnu akta tradditional system ache atar jonnu 
     // try{
     //   fetchMeals();
@@ -80,6 +82,8 @@ const AvailableMeals = () => {
       setHttpError(e.message);
      })
 
+
+     
   }, []);
   
 if(isLoading){
