@@ -44,6 +44,7 @@ const AvailableMeals = () => {
       
       const response = await fetch('https://food-app-75f79-default-rtdb.firebaseio.com/meals.json');
        
+      //if error is happen that time it will be executed
       if(!response.ok) {
         throw new Error ('Something went wrong');   ///jenuric error
       }
@@ -83,7 +84,7 @@ const AvailableMeals = () => {
      })
 
 
-     
+
   }, []);
   
 if(isLoading){
