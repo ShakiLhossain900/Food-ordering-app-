@@ -1,4 +1,5 @@
 //the code day start with allah 
+//inshaallah
 
  import { useState } from "react";
 import Cart from "./components/Cart/Cart";
