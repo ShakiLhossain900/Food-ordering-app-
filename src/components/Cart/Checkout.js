@@ -1,8 +1,13 @@
 import classes from "./Checkout.module.css";
 
 const Checkout = (props) => {
+
+const confirmhandler = (event) => {
+event.preventDefault();
+}
+
   return (
-    <form action="">
+    <form onSubmit={confirmhandler}>
       <div className={classes.control}>
         <label htmlFor="name">Your name</label>
         <input type="text" id="name" />
