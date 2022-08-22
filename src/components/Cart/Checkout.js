@@ -11,7 +11,7 @@ const Checkout = (props) => {
    street:true,
    city:true, 
    postalCode:true,
-  })
+  });
 
 
   const nameInputRef = useRef();
@@ -30,6 +30,14 @@ const Checkout = (props) => {
     const enteredStreetIsValid = !isEmpty(enteredStreet);
     const enteredCityIsValid = !isEmpty(enteredCity);
     const enteredPostalCodeIsValid = !isNotFiveChars(enteredPostalCode);
+
+
+    setFormInputsValidity({
+      name:enteredNameIsValid,
+      street:enteredStreetIsValid,
+      city:enteredCityIsValid,
+      postalCode:enteredPostalCodeIsValid
+    })
 
     const formIsValid =
       enteredNameIsValid &&
