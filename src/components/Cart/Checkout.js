@@ -8,6 +8,12 @@ const Checkout = (props) => {
   const cityInputRef = useRef();
   const confirmhandler = (event) => {
     event.preventDefault();
+
+
+    const enteredName=nameInputRef.current.value;
+    const enteredStreet = streetInputRef.current.value;
+    const enteredPostalCode = postalInputRef.current.value;
+    const enteredCity = cityInputRef.current.value;
   };
 
 
