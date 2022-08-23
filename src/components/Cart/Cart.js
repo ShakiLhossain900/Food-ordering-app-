@@ -18,6 +18,19 @@ const Cart = (props) => {
     cartCtx.addItem(item);
   };
 
+
+
+  //send data to the backend
+  const submitOrderHandler = userData => {
+    fetch('https://food-app-75f79-default-rtdb.firebaseio.com/orders.json',{
+      method: 'POST',
+      body: JSON.stringify({
+        user: userData,
+        orderedItems:cartCtx.items
+      })
+    });
+  }
+
   const cartTtems = (
     // ai class ta array vitor use kroar karon of das
     <ul className={classes["cart-items"]}>
@@ -53,7 +66,7 @@ const Cart = (props) => {
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
-      {isCheckout && <Checkout onclose = {props.onClose} />}
+      {isCheckout && <Checkout onConfirm={submitOrderHandler} onclose = {props.onClose} />}
       {!isCheckout && modalAction}
   
     </Modal>
