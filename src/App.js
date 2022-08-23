@@ -1,5 +1,6 @@
 //the code day start with allah 
 //inshaallah
+//allah the code start with your name allah time manage kore dao
 
  import { useState } from "react";
 import Cart from "./components/Cart/Cart";
